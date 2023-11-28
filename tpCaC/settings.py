@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'tpcacpython.sqlite3',
         'USER':'root',
         'PASSWORD':'',
-        'HOST':'tpcacpythons',
+        'HOST':'tpcacpython',
     }
 }
 
