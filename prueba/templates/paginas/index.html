@@ -1,65 +1,10 @@
+{% extends "base.html" %}
+
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0"
-		/>
-		<title>Website</title>
-		
-		<link type="text/css" rel="stylesheet" href="{% static 'css/styles.css' %}"/>
-	</head>
-	<body>
-		<header>
-			<div class="container-hero">
-				<div class="container hero">
-					<div class="customer-support">
-						<i class="fa-solid fa-headset"></i>
-						<div class="content-customer-support">
-							<span class="text">Atención al cliente</span>
-							<span class="number">123-456-7890</span>
-						</div>
-					</div>
 
-					<div class="container-logo">
-						<i class="fa-solid fa-mug-hot"></i>
-						<h1 class="logo"><a href="/">IT Talents</a></h1>
-					</div>
+{% block titulo %} Inicio {% endblock %}
 
-					<div class="container-user">
-						<i class="fa-solid fa-user"></i>
-						<i class="fa-solid fa-basket-shopping"></i>
-						<div class="content-shopping-cart">
-							<span class="text">Carrito</span>
-							<span class="number">(0)</span>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="container-navbar">
-				<nav class="navbar container">
-					<i class="fa-solid fa-bars"></i>
-					<ul class="menu">
-						<li><a href="#">Inicio</a></li>
-						<li><a href="#">Acerca de nosotros</a></li>
-						<li><a href="#">Nuestros talentos</a></li>
-						<li><a href="#">Blog</a></li>
-						<li><a href="#">Contactanos</a></li>
-					</ul>
-
-					<form class="search-form">
-						<input type="search" placeholder="Buscar..." />
-						<button class="btn-search">
-							<i class="fa-solid fa-magnifying-glass"></i>
-						</button>
-					</form>
-				</nav>
-			</div>
-		</header>
+{% block contenido %}
 
 		<section class="banner">
 			<div class="content-banner">
@@ -132,7 +77,7 @@
 					<!-- Producto 1 -->
 					<div class="card-product">
 						<div class="container-img">
-							<img src="{% static 'img/I1.png' %}" alt="Laptop" /><!--TOCAR diego del futuro-->
+							<img src="{% static 'img/I1.jpg' %}" alt="Laptop" /><!--1 TOCAR diego del futuro-->
 							<span class="discount">-13%</span>
 							<div class="button-group">
 								<span>
@@ -165,7 +110,7 @@
 					<div class="card-product">
 						<div class="container-img">
 							<img
-								src="{% static 'img/I3.png' %}"
+								src="img/I3.png"
 								alt="Laptop.jpg"
 							/>
 							<span class="discount">-22%</span>
@@ -200,7 +145,7 @@
 					<div class="card-product">
 						<div class="container-img">
 							<img
-								src="{% static 'img/I2.png' %}"
+								src="img/I2.png"
 								alt="Laptop"
 							/>
 							<div class="button-group">
@@ -233,7 +178,7 @@
 					<!--  -->
 					<div class="card-product">
 						<div class="container-img">
-							<img src="{% static 'img/I3.png' %}" alt="Laptop" />
+							<img src="img/I3.png" alt="Laptop" />
 							<div class="button-group">
 								<span>
 									<i class="fa-regular fa-eye"></i>
@@ -266,23 +211,23 @@
 
 			<section class="gallery">
 				<img
-					src="{% static 'img/I4.png' %}"
+					src="img/I4.png"
 					alt="Gallery Img1"
 					class="gallery-img-1"
 				/><img
-					src="{% static 'img/I4.png' %}"
+					src="img/I4.png"
 					alt="Gallery Img2"
 					class="gallery-img-2"
 				/><img
-					src="{% static 'img/I2.png' %}"
+					src="img/I2.png"
 					alt="Gallery Img3"
 					class="gallery-img-3"
 				/><img
-					src="{% static 'img/I5.png' %}"
+					src="img/I5.png"
 					alt="Gallery Img4"
 					class="gallery-img-4"
 				/><img
-					src="{% static 'img/I1.png' %}"
+					src="img/I1.png"
 					alt="Gallery Img5"
 					class="gallery-img-5"
 				/>
@@ -295,7 +240,7 @@
 					<!-- Producto 1 -->
 					<div class="card-product">
 						<div class="container-img">
-							<img src="{% static 'img/I3.png' %}" alt="Laptop" />
+							<img src="img/I3.png" alt="Laptop" />
 							<span class="discount">-13%</span>
 							<div class="button-group">
 								<span>
@@ -328,7 +273,7 @@
 					<div class="card-product">
 						<div class="container-img">
 							<img
-								src="{% static 'img/I3.png' %}"
+								src="img/I3.png"
 								alt="Laptop"
 							/>
 							<span class="discount">-22%</span>
@@ -362,7 +307,7 @@
 					<!--  -->
 					<div class="card-product">
 						<div class="container-img">
-							<img src="{% static 'img/I3.png' %}" alt="Laptop" />
+							<img src="img/I3.png" alt="Laptop" />
 							<span class="discount">-30%</span>
 							<div class="button-group">
 								<span>
@@ -394,7 +339,7 @@
 					<!--  -->
 					<div class="card-product">
 						<div class="container-img">
-							<img src="{% static 'img/I3.png' %}" alt="Laptop" />
+							<img src="img/I3.png" alt="Laptop" />
 							<div class="button-group">
 								<span>
 									<i class="fa-regular fa-eye"></i>
@@ -431,7 +376,7 @@
 				<div class="container-blogs">
 					<div class="card-blog">
 						<div class="container-img">
-							<img src="{% static 'img/I5.png' %}" alt="Imagen Blog 1" />
+							<img src="img/I5.png" alt="Imagen Blog 1" />
 							<div class="button-group-blog">
 								<span>
 									<i class="fa-solid fa-magnifying-glass"></i>
@@ -508,87 +453,5 @@
 			</section>
 		</main>
 
-		<footer class="footer">
-			<div class="container container-footer">
-				<div class="menu-footer">
-					<div class="contact-info">
-						<p class="title-footer">Información de Contacto</p>
-						<ul>
-							<li>
-								Dirección: Av. del Libertador 3046 piso 3A, CABA
-							</li>
-							<li>Teléfono: 123-456-7890</li>
-							<li>EmaiL: ITalent@support.com</li>
-						</ul>
-						<div class="social-icons">
-							<span class="facebook">
-								<i class="fa-brands fa-facebook-f"></i>
-							</span>
-							<span class="twitter">
-								<i class="fa-brands fa-twitter"></i>
-							</span>
-							<span class="youtube">
-								<i class="fa-brands fa-youtube"></i>
-							</span>
-							<span class="pinterest">
-								<i class="fa-brands fa-pinterest-p"></i>
-							</span>
-							<span class="instagram">
-								<i class="fa-brands fa-instagram"></i>
-							</span>
-						</div>
-					</div>
-
-					<div class="information">
-						<p class="title-footer">Información</p>
-						<ul>
-							<li><a href="#">Acerca de Nosotros</a></li>
-							<li><a href="#">Información</a></li>
-							<li><a href="#">Politicas de Privacidad</a></li>
-							<li><a href="#">Términos y condiciones</a></li>
-							<li><a href="#">Contactános</a></li>
-						</ul>
-					</div>
-
-					<div class="my-account">
-						<p class="title-footer">Mi cuenta</p>
-
-						<ul>
-							<li><a href="#">Mi cuenta</a></li>
-							<li><a href="#">Historial de ordenes</a></li>
-							<li><a href="#">Lista de deseos</a></li>
-							<li><a href="#">Blog</a></li>
-						
-						</ul>
-					</div>
-
-					<div class="newsletter">
-						<p class="title-footer">Blog</p>
-
-						<div class="content">
-							<p>
-								Suscríbete a nuestro blog ahora y mantente al
-								día con las nuevas tendencias y ofertas exclusivas.
-							</p>
-							<input type="email" placeholder="Ingresa el correo aquí...">
-							<button>Suscríbete</button>
-						</div>
-					</div>
-				</div>
-
-				<div class="copyright">
-					<p>
-						Desarrollado para Codo a Codo 4.0 &copy; 2023
-					</p>
-
-					<img src="img/payment.png" alt="Pagos">
-				</div>
-			</div>
-		</footer>
-
-		<script
-			src="https://kit.fontawesome.com/81581fb069.js"
-			crossorigin="anonymous"
-		></script>
-	</body>
-</html>
+		{% endblock %}
+	

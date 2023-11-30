@@ -1090,11 +1090,15 @@ html {
 /*         LOGIN FORM STYLES          */
 /* ********************************** */
 /* Estilos para los formularios */
-.contenedor-formularios {
+.contenedor-formularios_ {
 	max-width: 600px;
 	margin: 0 auto;
   }
   
+  .pepe{
+	background-color: red;
+  }
+
   .contenedor-tabs {
 	list-style: none;
 	padding: 0;

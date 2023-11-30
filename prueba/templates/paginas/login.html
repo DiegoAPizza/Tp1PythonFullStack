@@ -1,22 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    />
-    <title>Website</title>
-    {% load static %}
-    <link type="text/css" rel="stylesheet" href="{% static 'css/styles.css' %}"/>
-</head>
+{% load static %}
 
-<body>
+{% block titulo %} Login {% endblock %}
 
+{% block contenido %}
+    <div class="pepe">
+        <a href="#index">AAAAAAAA</a>
+    </div>
     <!-- Formularios -->
-    <div class="contenedor-formularios">
+    <div class="contenedor-formularios_">
         <!-- Links de los formularios -->
         <ul class="contenedor-tabs">
             <li class="tab tab-segunda active"><a href="#iniciar-sesion">Iniciar Sesión</a></li>
@@ -99,6 +92,5 @@
     </div>
 
 
-</body>
 
-</html>
+    {% endblock %}
