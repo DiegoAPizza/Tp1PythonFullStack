@@ -3,7 +3,7 @@
 :root {
 	--primary-color: #24B2B5;
 	--background-color: #162148;
-	--dark-color: #ffff ;
+	--dark-color: #ffff;
 }
 
 html {
@@ -252,6 +252,7 @@ html {
 .main-content {
 	background-color: var(--background-color);
 }
+
 .text {
 	color: #fff;
 }
@@ -809,15 +810,13 @@ html {
 }
 
 .instagram {
-	background: linear-gradient(
-		#405de6,
-		#833ab4,
-		#c13584,
-		#e1306c,
-		#fd1d1d,
-		#f56040,
-		#fcaf45
-	);
+	background: linear-gradient(#405de6,
+			#833ab4,
+			#c13584,
+			#e1306c,
+			#fd1d1d,
+			#f56040,
+			#fcaf45);
 }
 
 .content p {
@@ -929,7 +928,7 @@ html {
 		font-size: 2.4rem;
 	}
 
-	.container top-categories .container .top-products .container specials{
+	.container top-categories .container .top-products .container specials {
 		color: #fff;
 	}
 
@@ -1063,13 +1062,13 @@ html {
 		font-size: 2.2rem;
 	}
 
-	.btn-read-more{
+	.btn-read-more {
 		font-size: 1.8rem;
 	}
 
 	.contact-info ul,
 	.information ul,
-	.my-account ul{
+	.my-account ul {
 		display: none;
 	}
 
@@ -1077,11 +1076,11 @@ html {
 		align-items: center;
 	}
 
-	.menu-footer{
+	.menu-footer {
 		grid-template-columns: 1fr;
 	}
 
-	.content p{
+	.content p {
 		font-size: 1.6rem;
 	}
 }
@@ -1090,25 +1089,21 @@ html {
 /*         LOGIN FORM STYLES          */
 /* ********************************** */
 /* Estilos para los formularios */
-.contenedor-formularios_ {
+.contenedor-formularios {
 	max-width: 600px;
 	margin: 0 auto;
-  }
-  
-  .pepe{
-	background-color: red;
-  }
+}
 
-  .contenedor-tabs {
+.contenedor-tabs{
 	list-style: none;
 	padding: 0;
 	margin: 0;
 	display: flex;
 	justify-content: center;
 	gap: 20px;
-  }
-  
-  .tab a {
+}
+
+.tab a {
 	text-decoration: none;
 	color: #fff;
 	font-size: 1.2rem;
@@ -1116,58 +1111,58 @@ html {
 	border-radius: 5px;
 	background-color: #24B2B5;
 	transition: background-color 0.3s ease;
-  }
-  
-  .tab a:hover {
+}
+
+.tab a:hover {
 	background-color: #0A1135;
-  }
-  
-  .contenido-tab {
+}
+
+.contenido-tab {
 	background-color: #162148;
 	padding: 20px;
 	border-radius: 10px;
-  }
-  
-  .formulario {
+}
+
+.formulario {
 	display: none;
-  }
-  
-  .formulario h1 {
+}
+
+.formulario h1 {
 	color: #fff;
 	font-size: 2rem;
 	margin-bottom: 20px;
-  }
-  
-  .contenedor-input {
+}
+
+.contenedor-input {
 	margin-bottom: 20px;
-  }
-  
-  .contenedor-input label {
+}
+
+.contenedor-input label {
 	color: #fff;
 	font-size: 1rem;
 	display: block;
 	margin-bottom: 5px;
-  }
-  
-  .contenedor-input input {
+}
+
+.contenedor-input input {
 	width: 100%;
 	padding: 10px;
 	border: 1px solid #ccc;
 	border-radius: 5px;
-  }
-  
-  .fila-arriba {
+}
+
+.fila-arriba {
 	display: flex;
 	justify-content: space-between;
-  }
-  
-  .forgot {
+}
+
+.forgot {
 	color: #fff;
 	font-size: 0.9rem;
 	margin-top: 10px;
-  }
-  
-  .button {
+}
+
+.button {
 	background-color: #24B2B5;
 	color: #fff;
 	padding: 10px 20px;
@@ -1176,9 +1171,8 @@ html {
 	font-size: 1rem;
 	cursor: pointer;
 	transition: background-color 0.3s ease;
-  }
-  
-  .button:hover {
+}
+
+.button:hover {
 	background-color: #0A1135;
-  }
-  
+}

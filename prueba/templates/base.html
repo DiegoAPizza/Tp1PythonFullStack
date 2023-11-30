@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block titulo %} {% endblock %}</title>
     <link type="text/css" rel="stylesheet" href="{% static 'css/styles.css' %}" />
-
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}" />
 </head>
 
 <body>
@@ -62,11 +62,9 @@
     </header>
     <!--ACA VENDRIA EL DIV QUE CONTEGA TODA LA PAGINA PUEDE SER UN DIV O MAIN-->
     <div class="container">
-
         {% block contenido %}
 
         {% endblock %}
-
     </div>
 
 
@@ -143,8 +141,8 @@
                 <p>
                     Desarrollado para Codo a Codo 4.0 &copy; 2023
                 </p>
-
-                <img src="img/payment.png" alt="Pagos">
+               
+                <img src=" {% static 'img/payment.png' %}" alt="Pagos">
             </div>
         </div>
     </footer>
