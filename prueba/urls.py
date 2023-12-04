@@ -10,4 +10,3 @@ urlpatterns = [
     path('login/',views.login,name="login"),
     
 ]
-urlpatterns += staticfiles_urlpatterns()

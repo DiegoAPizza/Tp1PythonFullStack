@@ -23,8 +23,6 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.inicio,name="index"),
     path('',include('prueba.urls')),
-    path('login/',views.login,name="login") ,  
+    
 ]
-( r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT } )

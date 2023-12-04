@@ -80,10 +80,10 @@ WSGI_APPLICATION = 'tpCaC.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'tpcacpython.sqlite3',
+        'NAME': BASE_DIR / 'tpcacpython',
         'USER':'root',
         'PASSWORD':'',
-        'HOST':'tpcacpython',
+        'HOST':'localhost',
     }
 }
 

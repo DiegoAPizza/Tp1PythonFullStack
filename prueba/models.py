@@ -1,13 +1,19 @@
 from django.db import models
 from uuid import uuid4
 # Create your models here.
-class User(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid4)
-    username = models.CharField(max_length=256, unique=True)
-    email = models.EmailField()
-    password = models.CharField(max_length=1024)
-   # img=models.ImageField("")##Ruta de la Imgane
-class Servicio(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid4)
-    nombre = models.CharField(max_length=256, unique=True)
+class Cliente(models.Model):
+    id=models.AutoField(primary_key=True)
+    nombre=models.CharField(max_length=45)
+    apellido=models.CharField(max_length=45)
+    email=models.CharField(max_length=45)
+    idServicio=models.ForeignKey()
+    idProducto=models.ForeignKey()
+    idMetodoDePago=models.ForeignKey(to=Producto)
+    idMetodoDeCobro=models.ForeignKey()
+class Producto(models.Model):
+    idProducto=models.AutoField(primary_key=True)
+    nombre=models.CharField(max_length=45)
+    cantidad=models.IntegerField(max_length=200)
+    imagen=models.ImageField(upload_to='imagenes/',null=True,blank=True)
+    
     
