@@ -45,6 +45,13 @@ class Producto(models.Model):
     cantidad = models.IntegerField()
     imagen = models.ImageField(upload_to='imagenes/', null=True, blank=True)
     descripcion = models.TextField(max_length=299)
+    icono_1 = models.CharField(max_length=50, default='fa-solid fa-star')
+    icono_2 = models.CharField(max_length=50, default='fa-solid fa-heart')
+    icono_3 = models.CharField(max_length=50, default='fa-solid fa-star')
+    icono_4 = models.CharField(max_length=50, default='fa-solid fa-heart')
+    icono_5 = models.CharField(max_length=50, default='fa-solid fa-circle')
+
+
 
 class Cliente(models.Model):
     id = models.AutoField(primary_key=True)
