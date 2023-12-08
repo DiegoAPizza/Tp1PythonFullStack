@@ -30,6 +30,20 @@ class Producto(models.Model):
     idProducto = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=45)
     categoria = models.CharField(max_length=70, default='default_value')
+    precio = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+
+    def calcular_descuento(self, porcentaje_descuento):
+        descuento = (porcentaje_descuento / 100) * self.precio
+        return descuento
+
+    def precio_con_descuento(self, porcentaje_descuento):
+        descuento = self.calcular_descuento(porcentaje_descuento)
+        precio_con_descuento = self.precio - descuento
+        return precio_con_descuento
+
+    def __str__(self):
+        return f"{self.nombre} - Precio: ${self.precio:.2f}"
+    
     cantidad = models.IntegerField()
     imagen = models.ImageField(upload_to='imagenes/', null=True, blank=True)
     descripcion = models.TextField(max_length=299)
