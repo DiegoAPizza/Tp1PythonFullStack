@@ -1,10 +1,18 @@
 from django.db import models
 from uuid import uuid4
 
+
+class Categoria(models.Model):
+    idCat = models.IntegerField(primary_key=True)
+    nombreCategoria = models.CharField(max_length=100)
+    
+    
+
 class Servicio(models.Model):
-    idServicio = models.AutoField(primary_key=True)
+    idServicio = models.IntegerField(primary_key=True)
     nombre = models.CharField(max_length=45)
     precio = models.IntegerField()
+    idCategoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, default=0)
 
 class MetodoDePago(models.Model):
     idPago = models.AutoField(primary_key=True)
@@ -17,10 +25,6 @@ class MetodoDeCobro(models.Model):
 
 
 
-class Categoria(models.Model):
-    idCat = models.AutoField(primary_key=True)
-    nombreCategoria = models.CharField(max_length=100)
-    idServicio = models.ForeignKey(Servicio, on_delete=models.CASCADE)
 
 class Producto(models.Model):
     idProducto = models.AutoField(primary_key=True)
