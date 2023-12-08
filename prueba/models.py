@@ -1,11 +1,11 @@
 from django.db import models
 from uuid import uuid4
-
+from decimal import Decimal
 
 class Categoria(models.Model):
     idCat = models.IntegerField(primary_key=True)
     nombreCategoria = models.CharField(max_length=100)
-    
+    clase_css = models.CharField(max_length=50, blank=True, null=True)
     
 
 class Servicio(models.Model):
@@ -30,15 +30,13 @@ class Producto(models.Model):
     idProducto = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=45)
     categoria = models.CharField(max_length=70, default='default_value')
+    desc=models.IntegerField(default=0)
     precio = models.DecimalField(max_digits=10, decimal_places=2, default=0)
 
-    def calcular_descuento(self, porcentaje_descuento):
-        descuento = (porcentaje_descuento / 100) * self.precio
-        return descuento
-
-    def precio_con_descuento(self, porcentaje_descuento):
-        descuento = self.calcular_descuento(porcentaje_descuento)
+    def calcular_precio_con_descuento(self):
+        descuento = (self.desc / Decimal('100')) * self.precio
         precio_con_descuento = self.precio - descuento
+        precio_con_descuento = precio_con_descuento.quantize(Decimal('0.00'))
         return precio_con_descuento
 
     def __str__(self):
