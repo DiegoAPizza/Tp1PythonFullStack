@@ -29,6 +29,7 @@ class MetodoDeCobro(models.Model):
 class Producto(models.Model):
     idProducto = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=45)
+    categoria = models.CharField(max_length=70, default='default_value')
     cantidad = models.IntegerField()
     imagen = models.ImageField(upload_to='imagenes/', null=True, blank=True)
     descripcion = models.TextField(max_length=299)
