@@ -49,18 +49,13 @@
 			<section class="container top-categories">
 				<h1 class="heading-1">Mejores Categorías</h1>
 				<div class="container-categories">
-					<div class="card-category category-moca">
-						<p>Diseño Web</p>
-						<span>Ver más</span>
+					{% for categoria in categorias|slice:":3"  %}
+					<div class="{{categoria.clase_css}}">
+					<p>{{ categoria.nombreCategoria}}</p>
+					<span>Ver más</span>
 					</div>
-					<div class="card-category category-expreso">
-						<p>Front-End</p>
-						<span>Ver más</span>
-					</div>
-					<div class="card-category category-capuchino">
-						<p>Back-End</p>
-						<span>Ver más</span>
-					</div>
+					{% endfor %}
+
 				</div>
 			</section>
 
@@ -238,10 +233,11 @@
 
 				<div class="container-products">
 					<!-- Producto 1 -->
+				{% for p in productos %}
 					<div class="card-product">
 						<div class="container-img">
-							<img src="img/I3.png" alt="Laptop" />
-							<span class="discount">-13%</span>
+							<img src="./../../static/css/img/I3.png" alt="Laptop">
+							<span class="discount">-{{ p.desc }}</span>
 							<div class="button-group">
 								<span>
 									<i class="fa-regular fa-eye"></i>
@@ -256,20 +252,22 @@
 						</div>
 						<div class="content-card-product">
 							<div class="stars">
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-regular fa-star"></i>
+								<i class="{{p.icono_1}}"></i> 
+								<i class="{{p.icono_2}}"></i> 
+								<i class="{{p.icono_3}}"></i> 
+								<i class="{{p.icono_4}}"></i> 
+								<i class="{{p.icono_5}}"></i>
 							</div>
-							<h3>Front-End</h3>
+							<h3>{{p.nombre}}</h3>
 							<span class="add-cart">
 								<i class="fa-solid fa-basket-shopping"></i>
 							</span>
-							<p class="price">$2175 <span>$2500</span></p>
+							<p class="price">$ {{ p.calcular_precio_con_descuento }} <span> $ {{ p.precio }}</span></p>
+							
 						</div>
-					</div>
-					<!-- Producto 2 -->
+					</div> 
+					{% endfor %}
+					<!-- 
 					<div class="card-product">
 						<div class="container-img">
 							<img
@@ -304,7 +302,7 @@
 							<p class="price">$2340 <span>$3000</span></p>
 						</div>
 					</div>
-					<!--  -->
+					
 					<div class="card-product">
 						<div class="container-img">
 							<img src="img/I3.png" alt="Laptop" />
@@ -336,7 +334,7 @@
 							<p class="price">$1750 <span>$2500</span></p>
 						</div>
 					</div>
-					<!--  -->
+					
 					<div class="card-product">
 						<div class="container-img">
 							<img src="img/I3.png" alt="Laptop" />
@@ -366,6 +364,8 @@
 							</span>
 							<p class="price">$5000</p>
 						</div>
+						-->
+						
 					</div>
 				</div>
 			</section>
