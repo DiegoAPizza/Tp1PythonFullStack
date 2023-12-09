@@ -49,6 +49,7 @@
 			<section class="container top-categories">
 				<h1 class="heading-1">Mejores Categorías</h1>
 				<div class="container-categories">
+
 					{% for categoria in categorias|slice:":3"  %}
 					<div class="{{categoria.clase_css}}">
 					<p>{{ categoria.nombreCategoria}}</p>
@@ -69,174 +70,13 @@
 				</div>
 
 				<div class="container-products">
+					{% for p in productos|slice:"4:" %}
 					<!-- Producto 1 -->
 					<div class="card-product">
 						<div class="container-img">
-							<img src="{% static 'img/I1.jpg' %}" alt="Laptop" /><!--1 TOCAR diego del futuro-->
-							<span class="discount">-13%</span>
-							<div class="button-group">
-								<span>
-									<i class="fa-regular fa-eye"></i>
-								</span>
-								<span>
-									<i class="fa-regular fa-heart"></i>
-								</span>
-								<span>
-									<i class="fa-solid fa-code-compare"></i>
-								</span>
-							</div>
-						</div>
-						<div class="content-card-product">
-							<div class="stars">
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-regular fa-star"></i>
-							</div>
-							<h3>Front-End</h3>
-							<span class="add-cart">
-								<i class="fa-solid fa-basket-shopping"></i>
-							</span>
-							<p class="price">$2175 <span>$2500</span></p>
-						</div>
-					</div>
-					<!-- Producto 2 -->
-					<div class="card-product">
-						<div class="container-img">
-							<img
-								src="img/I3.png"
-								alt="Laptop.jpg"
-							/>
-							<span class="discount">-22%</span>
-							<div class="button-group">
-								<span>
-									<i class="fa-regular fa-eye"></i>
-								</span>
-								<span>
-									<i class="fa-regular fa-heart"></i>
-								</span>
-								<span>
-									<i class="fa-solid fa-code-compare"></i>
-								</span>
-							</div>
-						</div>
-						<div class="content-card-product">
-							<div class="stars">
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-regular fa-star"></i>
-								<i class="fa-regular fa-star"></i>
-							</div>
-							<h3>Back-End</h3>
-							<span class="add-cart">
-								<i class="fa-solid fa-basket-shopping"></i>
-							</span>
-							<p class="price">$2340 <span>$3000</span></p>
-						</div>
-					</div>
-					<!--  -->
-					<div class="card-product">
-						<div class="container-img">
-							<img
-								src="img/I2.png"
-								alt="Laptop"
-							/>
-							<div class="button-group">
-								<span>
-									<i class="fa-regular fa-eye"></i>
-								</span>
-								<span>
-									<i class="fa-regular fa-heart"></i>
-								</span>
-								<span>
-									<i class="fa-solid fa-code-compare"></i>
-								</span>
-							</div>
-						</div>
-						<div class="content-card-product">
-							<div class="stars">
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-							</div>
-							<h3>Web Design + Dominio</h3>
-							<span class="add-cart">
-								<i class="fa-solid fa-basket-shopping"></i>
-							</span>
-							<p class="price">$3000</p>
-						</div>
-					</div>
-					<!--  -->
-					<div class="card-product">
-						<div class="container-img">
-							<img src="img/I3.png" alt="Laptop" />
-							<div class="button-group">
-								<span>
-									<i class="fa-regular fa-eye"></i>
-								</span>
-								<span>
-									<i class="fa-regular fa-heart"></i>
-								</span>
-								<span>
-									<i class="fa-solid fa-code-compare"></i>
-								</span>
-							</div>
-						</div>
-						<div class="content-card-product">
-							<div class="stars">
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-regular fa-star"></i>
-							</div>
-							<h3>Full-Stack</h3>
-							<span class="add-cart">
-								<i class="fa-solid fa-basket-shopping"></i>
-							</span>
-							<p class="price">$5000</p>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section class="gallery">
-				<img
-					src="img/I4.png"
-					alt="Gallery Img1"
-					class="gallery-img-1"
-				/><img
-					src="img/I4.png"
-					alt="Gallery Img2"
-					class="gallery-img-2"
-				/><img
-					src="img/I2.png"
-					alt="Gallery Img3"
-					class="gallery-img-3"
-				/><img
-					src="img/I5.png"
-					alt="Gallery Img4"
-					class="gallery-img-4"
-				/><img
-					src="img/I1.png"
-					alt="Gallery Img5"
-					class="gallery-img-5"
-				/>
-			</section>
-
-			<section class="container specials">
-				<h1 class="heading-1">Especiales</h1>
-
-				<div class="container-products">
-					<!-- Producto 1 -->
-				{% for p in productos %}
-					<div class="card-product">
-						<div class="container-img">
-							<img src="./../../static/css/img/I3.png" alt="Laptop">
+							{% if p.imagen %}
+							<img src="{{p.imagen.url}}" alt="Laptop">
+							{% endif %}
 							<span class="discount">-{{ p.desc }}</span>
 							<div class="button-group">
 								<span>
@@ -267,14 +107,45 @@
 						</div>
 					</div> 
 					{% endfor %}
-					<!-- 
+				</div>
+			</section>
+
+			<section class="gallery">
+				<img
+					src="{% static '../../static/css/img/I4.jpg' %}"
+					alt="Gallery Img1"
+					class="gallery-img-1"
+				/><img
+					src="{% static '../../static/css/img/I4.jpg' %}"
+					alt="Gallery Img2"
+					class="gallery-img-2"
+				/><img
+					src="{% static '../../static/css/img/I4.jpg' %}"
+					alt="Gallery Img3"
+					class="gallery-img-3"
+				/><img
+					src="{% static '../../static/css/img/I4.jpg' %}"
+					alt="Gallery Img4"
+					class="gallery-img-4"
+				/><img
+					src="{% static '../../static/css/img/I4.jpg' %}"
+					alt="Gallery Img5"
+					class="gallery-img-5"
+				/>
+			</section>
+
+			<section class="container specials">
+				<h1 class="heading-1">Especiales</h1>
+
+				<div class="container-products">
+					<!-- Producto 1 -->
+				{% for p in productos|slice:":4" %}
 					<div class="card-product">
 						<div class="container-img">
-							<img
-								src="img/I3.png"
-								alt="Laptop"
-							/>
-							<span class="discount">-22%</span>
+							{% if p.imagen %}
+							<img src="{{p.imagen.url}}" alt="Laptop">
+							{% endif %}
+							<span class="discount">-{{ p.desc }}</span>
 							<div class="button-group">
 								<span>
 									<i class="fa-regular fa-eye"></i>
@@ -289,94 +160,34 @@
 						</div>
 						<div class="content-card-product">
 							<div class="stars">
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-regular fa-star"></i>
-								<i class="fa-regular fa-star"></i>
+								<i class="{{p.icono_1}}"></i> 
+								<i class="{{p.icono_2}}"></i> 
+								<i class="{{p.icono_3}}"></i> 
+								<i class="{{p.icono_4}}"></i> 
+								<i class="{{p.icono_5}}"></i>
 							</div>
-							<h3>Back-End</h3>
+							<h3>{{p.nombre}}</h3>
 							<span class="add-cart">
 								<i class="fa-solid fa-basket-shopping"></i>
 							</span>
-							<p class="price">$2340 <span>$3000</span></p>
+							<p class="price">$ {{ p.calcular_precio_con_descuento }} <span> $ {{ p.precio }}</span></p>
+							
 						</div>
-					</div>
-					
-					<div class="card-product">
-						<div class="container-img">
-							<img src="img/I3.png" alt="Laptop" />
-							<span class="discount">-30%</span>
-							<div class="button-group">
-								<span>
-									<i class="fa-regular fa-eye"></i>
-								</span>
-								<span>
-									<i class="fa-regular fa-heart"></i>
-								</span>
-								<span>
-									<i class="fa-solid fa-code-compare"></i>
-								</span>
-							</div>
-						</div>
-						<div class="content-card-product">
-							<div class="stars">
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-							</div>
-							<h3>Web Design</h3>
-							<span class="add-cart">
-								<i class="fa-solid fa-basket-shopping"></i>
-							</span>
-							<p class="price">$1750 <span>$2500</span></p>
-						</div>
-					</div>
-					
-					<div class="card-product">
-						<div class="container-img">
-							<img src="img/I3.png" alt="Laptop" />
-							<div class="button-group">
-								<span>
-									<i class="fa-regular fa-eye"></i>
-								</span>
-								<span>
-									<i class="fa-regular fa-heart"></i>
-								</span>
-								<span>
-									<i class="fa-solid fa-code-compare"></i>
-								</span>
-							</div>
-						</div>
-						<div class="content-card-product">
-							<div class="stars">
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-regular fa-star"></i>
-							</div>
-							<h3>Full-Stack</h3>
-							<span class="add-cart">
-								<i class="fa-solid fa-basket-shopping"></i>
-							</span>
-							<p class="price">$5000</p>
-						</div>
-						-->
-						
+					</div> 
+					{% endfor %}
 					</div>
 				</div>
 			</section>
 
 			<section class="container blogs">
-				<h1 class="heading-1">Últimos Blogs</h1>
-
+				<h1 class="heading-1">Últimos Blogs</h1>	
 				<div class="container-blogs">
+					{% for b in blogs %}
 					<div class="card-blog">
 						<div class="container-img">
-							<img src="img/I5.png" alt="Imagen Blog 1" />
+							{% if b.imagen %}
+							<img src="{{b.imagen.url}}" alt="Imagen Blog">
+							{% endif %}
 							<div class="button-group-blog">
 								<span>
 									<i class="fa-solid fa-magnifying-glass"></i>
@@ -387,68 +198,15 @@
 							</div>
 						</div>
 						<div class="content-blog">
-							<h3>Lorem, ipsum dolor sit</h3>
-							<span>29 Noviembre 2023</span>
+							<h3>{{b.titulo}}</h3>
+							<span>{{b.fecha}}</span>
 							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing
-								elit. Iste, molestiae! Ratione et, dolore ipsum
-								quaerat iure illum reprehenderit non maxime amet dolor
-								voluptas facilis corporis, consequatur eius est sunt
-								suscipit?
+								{{b.descripcion}}
 							</p>
 							<div class="btn-read-more">Leer más</div>
 						</div>
 					</div>
-					<div class="card-blog">
-						<div class="container-img">
-							<img src="./img/I5.jpg" alt="Imagen Blog 2" />
-							<div class="button-group-blog">
-								<span>
-									<i class="fa-solid fa-magnifying-glass"></i>
-								</span>
-								<span>
-									<i class="fa-solid fa-link"></i>
-								</span>
-							</div>
-						</div>
-						<div class="content-blog">
-							<h3>Lorem, ipsum dolor sit</h3>
-							<span>29 Noviembre 2023</span>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing
-								elit. Iste, molestiae! Ratione et, dolore ipsum
-								quaerat iure illum reprehenderit non maxime amet dolor
-								voluptas facilis corporis, consequatur eius est sunt
-								suscipit?
-							</p>
-							<div class="btn-read-more">Leer más</div>
-						</div>
-					</div>
-					<div class="card-blog">
-						<div class="container-img">
-							<img src="./img/I5.jpg" alt="Imagen Blog 3" />
-							<div class="button-group-blog">
-								<span>
-									<i class="fa-solid fa-magnifying-glass"></i>
-								</span>
-								<span>
-									<i class="fa-solid fa-link"></i>
-								</span>
-							</div>
-						</div>
-						<div class="content-blog">
-							<h3>Lorem, ipsum dolor sit</h3>
-							<span>29 Noviembre 2023</span>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing
-								elit. Iste, molestiae! Ratione et, dolore ipsum
-								quaerat iure illum reprehenderit non maxime amet dolor
-								voluptas facilis corporis, consequatur eius est sunt
-								suscipit?
-							</p>
-							<div class="btn-read-more">Leer más</div>
-						</div>
-					</div>
+				{% endfor %}
 				</div>
 			</section>
 		</main>
