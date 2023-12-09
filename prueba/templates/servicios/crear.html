@@ -1,16 +1,10 @@
-<!DOCTYPE html>
-<html lang="es">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block titulo %} {% endblock %}</title>
-    <link type="text/css" rel="stylesheet" href="{% static 'css/styles.css' %}" />
-    <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <title>Crear Servicio</title>
-</head>
+{% load static %}
 
-<body>
+{% block titulo %} Crear servicio {% endblock %}
+
+{% block contenido %}
 
     <div class="contenedor-formularios">
         <ul class="contenedor-tabs">
@@ -51,6 +45,4 @@
         </div>
     </div>
 
-</body>
-
-</html>
+    {% endblock %}

@@ -62,3 +62,9 @@ class Cliente(models.Model):
     idProducto = models.ForeignKey(Producto, on_delete=models.CASCADE)
     idMetodoDePago = models.ForeignKey(MetodoDePago, on_delete=models.CASCADE)
     idMetodoDeCobro = models.ForeignKey(MetodoDeCobro, on_delete=models.CASCADE)
+
+class Blog(models.Model):
+    titulo=models.CharField(max_length=100)
+    fecha=models.CharField(max_length=50)
+    descripcion=models.TextField(max_length=300)
+    imagen = models.ImageField(upload_to='imagenes/', null=True, blank=True)
