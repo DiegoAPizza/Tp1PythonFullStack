@@ -105,3 +105,9 @@ class ServicioB(models.Model):
     categoria=models.IntegerField(choices=categoria)
     imagen = models.ImageField(upload_to='imagenes/', null=True, blank=True)
     descripcion= models.TextField(max_length=300)
+
+class AboutUs(models.Model):
+    nombre = models.CharField(max_length=80, null=True)
+    imagen = models.ImageField(upload_to='imagenes/aboutus/', null=True, blank=True)
+    rol = models.CharField(max_length=80, null=True)
+    linkedIng = models.CharField(max_length=90, null=True)

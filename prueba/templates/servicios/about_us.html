@@ -7,51 +7,19 @@
 {% block contenido %}
 <main id="main">
   <!-- Team Section -->
+  {% for a in aboutus %}
   <section class="box">
-    <img src="img/joss1.png" width="180" alt="" class="box-img">
-    <h1>Joselen González</h1>
-    <h2>UX/UI Designer - Web Developer</h2>
+    {% if a.imagen %}
+    <img src="{{a.imagen.url}}" width="180" alt="" class="box-img">
+    {% endif %}
+    <h1>{{a.nombre}}</h1>
+    <h2>{{a.rol}}</h2>
     <ul>
-      <li><a href="https://www.linkedin.com/in/joselengonzalez/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+      <li><a href="{{ a.linkedIng }}" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
     </ul>
   </section>
-
-  <section class="box">
-    <img src="img/juli.jpeg" width="180" alt="" class="box-img">
-    <h1>Julieta Mier</h1>
-    <h2>UX/UI Designer - Web Developer</h2>
-    <ul>
-      <li><a href="https://www.linkedin.com/in/julietabelenmier/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-    </ul>
-  </section>
-
-  <section class="box">
-    <img src="img/gabri.jpg" width="180" alt="" class="box-img">
-    <h1>Gabriela Coronel</h1>
-    <h2>Web Developer</h2>
-    <ul>
-      <li><a href="https://www.linkedin.com/in/gabriela-coronel-43a0a4286/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-    </ul>
-  </section>
-
-    <!-- Additional Team Members -->
-    <section class="box">
-      <img src="img/diego.jpg" width="180" alt="" class="box-img">
-      <h1>Diego Pizza</h1>
-      <h2>Web Developer</h2>
-      <ul>
-        <li><a href="https://www.linkedin.com/in/diego-pizza-007410235/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-      </ul>
-    </section>
-
-    <section class="box">
-      <img src="img/luciana.jpeg" width="180" alt="" class="box-img">
-      <h1>Luciana Alzuri</h1>
-      <h2>Designer - Web Developer</h2>
-      <ul>
-        <li><a href="https://www.linkedin.com/in/luciana-aymara-alzuri/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-      </ul>
-    </section>
+  {% endfor %}
+  
 
 </main>
 {% endblock %}

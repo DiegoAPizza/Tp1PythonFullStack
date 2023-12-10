@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Producto, Categoria, Blog, ServicioB
+from .models import Producto, Categoria, Blog, ServicioB, AboutUs
 from  .forms import ContactoForm, ServicioForm
 # Create your views here.
 
@@ -67,7 +67,11 @@ def blog(request):
     return render(request,"./paginas/blog.html", data)
 
 def about_us(request):
-    return render(request,"./servicios/about_us.html")
+    aboutUs= AboutUs.objects.all()
+    data={
+        'aboutus':aboutUs,
+    }
+    return render(request,"./servicios/about_us.html", data)
 
 def nt(request):
     return render(request,"./paginas/nt.html")
