@@ -15,7 +15,7 @@ def inicio(request):
         'blogs':blogs,
         'contactanos': contactanos,
         'blog':blog,
-        'adn':adn,
+        'about_us':about_us,
         'NuestrosTalentos': nt,
         'servicios':servicios,
         'shop': shop,
@@ -66,8 +66,8 @@ def blog(request):
     }
     return render(request,"./paginas/blog.html", data)
 
-def adn(request):
-    return render(request,"./paginas/adn.html")
+def about_us(request):
+    return render(request,"./servicios/about_us.html")
 
 def nt(request):
     return render(request,"./paginas/nt.html")
