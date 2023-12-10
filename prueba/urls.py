@@ -12,4 +12,5 @@ urlpatterns = [
     path('adn/',views.adn ,name="adn"),
     path('nt/',views.nt ,name="nt"),
     path('servicios/',views.servicios ,name="servicios"),
+    path('shop/',views.shop ,name="shop"),
 ]
