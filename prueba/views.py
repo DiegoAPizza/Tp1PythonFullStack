@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Producto, Categoria, Blog
-
+from  .forms import ContactoForm
 # Create your views here.
 
     
@@ -33,7 +33,19 @@ def edit(request):
     return render(request,"./servicios/editar.html")
 
 def contactanos(request):
-    return render(request,"./paginas/contactanos.html")
+    data={
+        'form': ContactoForm()
+    }
+    # Si el form tiene información, podemos llenar un formulario para ver desde el admin 
+    if request.method=='POST':
+        formulario = ContactoForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            data['mensaje']='Su consulta ha sido realizada satisfactoriamente ¡Muchas gracias!'
+        else:
+            data['form'] = formulario     
+
+    return render(request,"./paginas/contactanos.html", data)
 
 def blog(request):
     blogs= Blog.objects.all()

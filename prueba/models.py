@@ -68,3 +68,14 @@ class Blog(models.Model):
     fecha=models.CharField(max_length=50)
     descripcion=models.TextField(max_length=300)
     imagen = models.ImageField(upload_to='imagenes/', null=True, blank=True)
+opciones_consultas=[
+    [0, 'Consulta'],
+    [1, 'Reclamo'],
+    [2, 'Sugerencia']
+]
+class Contacto(models.Model):
+    nombre=models.CharField(max_length=50)
+    correo=models.EmailField()
+    tipo_consulta = models.IntegerField(choices=opciones_consultas)
+    mensaje=models.TextField()
+    avisos=models.BooleanField()
