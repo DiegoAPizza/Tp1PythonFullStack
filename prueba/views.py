@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Producto, Categoria, Blog
-from  .forms import ContactoForm
+from .models import Producto, Categoria, Blog, ServicioB
+from  .forms import ContactoForm, ServicioForm
 # Create your views here.
 
     
@@ -26,8 +26,20 @@ def inicio(request):
 def login(request):
     return render(request,"./paginas/login-register.html")
 
-def service(request):
-    return render(request,"./servicios/crear.html")
+def create(request):
+    data={
+        'form': ServicioForm()
+    }
+    if request.method=='POST':
+        
+        servicio = ServicioForm(data=request.POST, files=request.FILES)
+        if servicio.is_valid():
+            servicio.save()
+            data['mensaje']='¡Tu producto ha sido agregado correctamente!'
+        else:
+            data['form'] = servicio     
+
+    return render(request,"./servicios/crear.html", data)
 
 def edit(request):
     return render(request,"./servicios/editar.html")
@@ -61,7 +73,12 @@ def nt(request):
     return render(request,"./paginas/nt.html")
 
 def servicios(request):
-    return render(request,"./paginas/servicios.html")
+    serviciosB= ServicioB.objects.all()
+    data={
+        'serviciosB':serviciosB
+        }
+
+    return render(request,"./paginas/servicios.html", data)
 
 def shop (request):
     return render(request,"./paginas/shop.html")

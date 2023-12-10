@@ -79,3 +79,29 @@ class Contacto(models.Model):
     tipo_consulta = models.IntegerField(choices=opciones_consultas)
     mensaje=models.TextField()
     avisos=models.BooleanField()
+
+categoria=[
+    [900, 'Diseño Web'],
+    [901, 'Front End'], 
+    [902, 'Back End'],
+    [903, 'Logo & Marca'], 
+    [904, 'Diseño de Apps'], 
+    [905, 'Arte'], 
+    [906, 'Ilustr,aciones'],
+    [907, 'Diseño UX'],
+    [908, 'Gaming' ],
+    [909, 'Diseño 3D'],
+    [910, 'Marketing Digital'], 
+    [911, 'Soporte'], 
+    [912, 'Programacion y Tecnologia'], 
+    [913, 'Datos'],
+    [914, 'Fotografia y Edicion' ],
+    [915, 'Videos y Edición'] 
+
+]
+class ServicioB(models.Model):
+    servicio = models.CharField(max_length=80, null=True)
+    precio = models.IntegerField()
+    categoria=models.IntegerField(choices=categoria)
+    imagen = models.ImageField(upload_to='imagenes/', null=True, blank=True)
+    descripcion= models.TextField(max_length=300)
