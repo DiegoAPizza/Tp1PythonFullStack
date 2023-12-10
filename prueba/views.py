@@ -17,6 +17,7 @@ def inicio(request):
         'blog':blog,
         'adn':adn,
         'nt': nt,
+        'servicios':servicios,
         
     }
 
@@ -41,3 +42,6 @@ def adn(request):
 
 def nt(request):
     return render(request,"./paginas/nt.html")
+
+def servicios(request):
+    return render(request,"./paginas/servicios.html")
