@@ -16,7 +16,7 @@ def inicio(request):
         'contactanos': contactanos,
         'blog':blog,
         'adn':adn,
-        'nt': nt,
+        'NuestrosTalentos': nt,
         'servicios':servicios,
         'shop': shop,
         
@@ -78,7 +78,9 @@ def servicios(request):
         'serviciosB':serviciosB
         }
 
+    
     return render(request,"./paginas/servicios.html", data)
 
 def shop (request):
     return render(request,"./paginas/shop.html")
+
