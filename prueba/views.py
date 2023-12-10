@@ -12,7 +12,12 @@ def inicio(request):
     data={
         'productos':productos,
         'categorias':categorias,
-        'blogs':blogs
+        'blogs':blogs,
+        'contactanos': contactanos,
+        'blog':blog,
+        'adn':adn,
+        'nt': nt,
+        
     }
 
     return render(request,"./paginas/index.html", data)
@@ -25,3 +30,14 @@ def service(request):
 def edit(request):
     return render(request,"./servicios/editar.html")
 
+def contactanos(request):
+    return render(request,"./paginas/contactanos.html")
+
+def blog(request):
+    return render(request,"./paginas/blog.html")
+
+def adn(request):
+    return render(request,"./paginas/adn.html")
+
+def nt(request):
+    return render(request,"./paginas/nt.html")
