@@ -1,63 +1,43 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0"/>
-			<link rel="stylesheet" type="text/css" href="{% static './css/styles.css' %}"/>
-		
-		<title>{% block title %} {% endblock %}Blog</title>
-		<body>
-			
-			<header>
-				<div class="container-hero">
-					<div class="container hero">
-						<div class="customer-support">
-							<i class="fa-solid fa-headset"></i>
-							<div class="content-customer-support">
-								<span class="text">Atención al cliente</span>
-								<span class="number">123-456-7890</span>
-							</div>
-						</div>
-	
-						<div class="container-logo">
-							<i class="fa-solid fa-mug-hot"></i>
-							<h1 class="logo"><a href="/">IT Talents</a></h1>
-						</div>
-	
-						<div class="container-user">
-							<i class="fa-solid fa-user"></i>
-							<i class="fa-solid fa-basket-shopping"></i>
-							<div class="content-shopping-cart">
-								<span class="text">Carrito</span>
-								<span class="number">(0)</span>
-							</div>
-						</div>
-					</div>
-				</div>
-	
-				<div class="container-navbar">
-					<nav class="navbar container">
-						<i class="fa-solid fa-bars"></i>
-						<ul class="menu">
-							<li><a href="/">Inicio</a></li>
-                    		<li><a href="/adn">Acerca de nosotros</a></li>
-                    		<li><a href="/nt">Nuestros talentos</a></li>
-                    		<li><a href="/contactanos">Contactanos</a></li>
-                   			<li><a href="/servicios/">Servicios</a></li>
-						</ul>
-	
-						<form class="search-form">
-							<input type="search" placeholder="Buscar..." />
-							<button class="btn-search">
-								<i class="fa-solid fa-magnifying-glass"></i>
-							</button>
-						</form>
-					</nav>
-				</div>
-			</header>
+{% extends "base.html" %}
 
-        {% block content %}{% endblock %}
+{% load static %}
+
+{% block titulo %} Blogs {% endblock %}
+
+{% block contenido %}
+
+	<br>
+	<br>
+	<br>
+	<h1 class="heading-1" style="color: #0f1630;">¡Enterate de las novedades de la comunidad!</h1>
+	<br>
+	<br>
+	<div class="container-blogs">
+		{% for b in blogs|slice:"3:" %}
+		<div class="card-blog">
+			<div class="container-img">
+				{% if b.imagen %}
+				<img src="{{b.imagen.url}}" alt="Imagen Blog">
+				{% endif %}
+				<div class="button-group-blog">
+					<span>
+						<i class="fa-solid fa-magnifying-glass"></i>
+					</span>
+					<span>
+						<i class="fa-solid fa-link"></i>
+					</span>
+				</div>
+			</div>
+			<div class="content-blog">
+				<h3>{{b.titulo}}</h3>
+				<span>{{b.fecha}}</span>
+				<p>
+					{{b.descripcion}}
+				</p>
+				<div class="btn-read-more">Leer más</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+
+			{% endblock %}
