@@ -87,7 +87,7 @@ categoria=[
     [903, 'Logo & Marca'], 
     [904, 'Diseño de Apps'], 
     [905, 'Arte'], 
-    [906, 'Ilustr,aciones'],
+    [906, 'Ilustraciones'],
     [907, 'Diseño UX'],
     [908, 'Gaming' ],
     [909, 'Diseño 3D'],
