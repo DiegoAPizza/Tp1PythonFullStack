@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from .models import Producto, Categoria, Blog, ServicioB, AboutUs
 from  .forms import ContactoForm, ServicioForm
@@ -35,14 +35,35 @@ def create(request):
         servicio = ServicioForm(data=request.POST, files=request.FILES)
         if servicio.is_valid():
             servicio.save()
-            data['mensaje']='¡Tu producto ha sido agregado correctamente!'
+            data['mensaje']='¡Tu servicio ha sido agregado correctamente!'
         else:
             data['form'] = servicio     
 
     return render(request,"./servicios/crear.html", data)
 
-def edit(request):
-    return render(request,"./servicios/editar.html")
+def edit(request, id):
+    servicioB = get_object_or_404(ServicioB, id=id)
+    data={
+        'form': ServicioForm(instance=servicioB)
+    }
+    if request.method=='POST':
+        
+        servicio = ServicioForm(data=request.POST, files=request.FILES, instance=servicioB)
+        if servicio.is_valid():
+            servicio.save()
+            return redirect(to='/servicios/')
+        else:
+            data['form'] = servicio  
+    return render(request,"./servicios/editar.html", data)
+
+def delete(request, id):
+    servicioB = get_object_or_404(ServicioB, id=id)
+    servicioB.delete()
+    data={
+        'form': ServicioForm(instance=servicioB)
+    }
+    
+    return redirect('/servicios/')
 
 def contactanos(request):
     data={

@@ -34,8 +34,8 @@
                         <h3>{{s.servicio}}</h3>
                         <p class="price">$ {{ s.precio }}</p>
                     </div>
-                    <input type="submit" class="button button-block" value="Editar servicio">
-                    <input type="reset" class="button button-block" value="Eliminar servicio">
+                    <a href="{% url 'edit' s.id %}"><input type="submit" class="button button-block" value="Editar servicio"></a>
+                    <a href="{% url 'delete' s.id %}"><input type="submit" class="button button-block" value="Eliminar servicio"></a>
                 </div> 
                 {% endfor %}
             </div>

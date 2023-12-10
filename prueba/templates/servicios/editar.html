@@ -1,103 +1,36 @@
-<!DOCTYPE html>
-<html lang="es">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block titulo %} {% endblock %}</title>
-    <link type="text/css" rel="stylesheet" href="{% static 'css/styles.css' %}" />
-    <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <title>Editar Servicio</title>
-</head>
+{% load static %}
 
-<body>
-    <header>
-        <div class="container-hero">
-            <div class="container hero">
-                <div class="customer-support">
-                    <i class="fa-solid fa-headset"></i>
-                    <div class="content-customer-support">
-                        <span class="text">Atención al cliente</span>
-                        <span class="number">123-456-7890</span>
-                    </div>
-                </div>
+{% block titulo %} Crear servicio {% endblock %}
 
-                <div class="container-logo">
-                    <i class="fa-solid fa-mug-hot"></i>
-                    <h1 class="logo"><a href="/">IT Talents</a></h1>
-                </div>
+{% block contenido %}
+<div class="contenedor-formularios">
+    <ul class="contenedor-tabs">
+        <li class="tab tab-tercera active"><a href="#">Tus servicios</a></li>
+        <li class="tab tab-segunda"><a href="/create">Crear servicio</a></li>
+        <li class="tab tab-segunda"><a href="#editar-servicio">Editar servicio</a></li>
+        <li class="tab tab-primera"><a href="#eliminar-servicio">Eliminar Servicio</a></li>
+    </ul>
+    
+    <div class="contenido-tab">
 
-                <div class="container-user">
-                    <a href="/login/"><i class="fa-solid fa-user"></i></a>
-                    <a href="shop/"><i class="fa-solid fa-basket-shopping"></i></a>
-                    <div class="content-shopping-cart">
-                        <span class="text">Carrito</span>
-                        <span class="number">(0)</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- Editar Servicio -->
+        <div id="editar-servicio" class="service-form">
+            <h1>Crear servicio</h1>
+            <br>
+            <form action="#" method="post" enctype="multipart/form-data">
 
-        <div class="container-navbar">
-            <nav class="navbar container">
-                <i class="fa-solid fa-bars"></i>
-                <ul class="menu">
-                    <li><a href="/">Inicio</a></li>
-                    <li><a href="/adn">Acerca de nosotros</a></li>
-                    <li><a href="nt">Nuestros talentos</a></li>
-                    <li><a href="/blog">Blog</a></li>
-                    <li><a href="/contactanos">Contactanos</a></li>
-                    <li><a href="/servicios">Servicios</a></li>
-                </ul>
+                {% csrf_token %}
 
-                <form class="search-form">
-                    <input type="search" placeholder="Buscar..." />
-                    <button class="btn-search">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
-                </form>
-            </nav>
-        </div>
-    </header>
-    <div class="contenedor-formularios">
-        <ul class="contenedor-tabs">
-            <li class="tab tab-tercera active"><a href="#editar-servicio">Editar Servicio</a></li>
-            <li class="tab tab-segunda"><a href="#iniciar-sesion">Iniciar Sesión</a></li>
-            <li class="tab tab-primera"><a href="#registrarse">Registrarse</a></li>
-        </ul>
+                {{form}}
 
-        <div class="contenido-tab">
-            <!-- Editar Servicio -->
-            <div id="editar-servicio" class="formulario">
-                <h1>Editar Servicio</h1>
-                <form action="#" method="post">
-                    <div class="contenedor-input">
-                        <label>
-                            Nombre del Servicio <span class="req">*</span>
-                        </label>
-                        <input type="text" required>
-                    </div>
-
-                    <div class="contenedor-input">
-                        <label>
-                            Descripción <span class="req">*</span>
-                        </label>
-                        <textarea rows="4" required></textarea>
-                    </div>
-
-                    <div class="contenedor-input">
-                        <label>
-                            Precio <span class="req">*</span>
-                        </label>
-                        <input type="number" required>
-                    </div>
-
-                    <input type="submit" class="button button-block" value="Guardar Cambios">
-                </form>
-            </div>
+                
+                <input type="submit" class="button button-block" value="Guardar servicio">
+                <input type="reset" class="button button-block" value="Cancelar">    
+            </form>
+            {{mensaje}}
         </div>
     </div>
-
-</body>
-
-</html>
+</div>
+    {% endblock %}
