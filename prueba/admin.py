@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Servicio, MetodoDeCobro, MetodoDePago, Categoria, Producto, Cliente, Blog, Contacto
+from .models import Servicio, MetodoDeCobro, MetodoDePago, Categoria, Producto, Cliente, Blog, Contacto, ServicioB
 
 #Register your models here.
 admin.site.register(Servicio)
@@ -12,3 +12,4 @@ admin.site.register(Producto)
 admin.site.register(Cliente)
 admin.site.register(Blog)
 admin.site.register(Contacto)
+admin.site.register(ServicioB)

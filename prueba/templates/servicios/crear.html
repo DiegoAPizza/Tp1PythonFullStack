@@ -6,43 +6,31 @@
 
 {% block contenido %}
 
-    <div class="contenedor-formularios">
-        <ul class="contenedor-tabs">
-            <li class="tab tab-tercera active"><a href="#crear-servicio">Crear Servicio</a></li>
-            <li class="tab tab-segunda"><a href="#iniciar-sesion">Iniciar Sesión</a></li>
-            <li class="tab tab-primera"><a href="#registrarse">Registrarse</a></li>
-        </ul>
+<div class="contenedor-formularios">
+    <ul class="contenedor-tabs">
+        <li class="tab tab-tercera active"><a href="/servicios">Tus servicios</a></li>
+        <li class="tab tab-segunda"><a href="/create">Crear servicio</a></li>
+        <li class="tab tab-segunda"><a href="#editar-servicio">Editar servicio</a></li>
+        <li class="tab tab-primera"><a href="#eliminar-servicio">Eliminar Servicio</a></li>
+    </ul>
+    
+    <div class="contenido-tab">
+        <!-- Editar Servicio -->
+        <div id="editar-servicio" class="service-form">
+            <h1>Crear servicio</h1>
+            <br>
+            <form action="#" method="post" enctype="multipart/form-data">
 
-        <div class="contenido-tab">
-            <!-- Crear Servicio -->
-            <div id="crear-servicio" class="formulario">
-                <h1>Crear Servicio</h1>
-                <form action="#" method="post">
-                    <div class="contenedor-input">
-                        <label>
-                            Nombre del Servicio <span class="req">*</span>
-                        </label>
-                        <input type="text" required>
-                    </div>
+                {% csrf_token %}
 
-                    <div class="contenedor-input">
-                        <label>
-                            Descripción <span class="req">*</span>
-                        </label>
-                        <textarea rows="4" required></textarea>
-                    </div>
+                {{form}}
 
-                    <div class="contenedor-input">
-                        <label>
-                            Precio <span class="req">*</span>
-                        </label>
-                        <input type="number" required>
-                    </div>
-
-                    <input type="submit" class="button button-block" value="Crear Servicio">
-                </form>
-            </div>
+                
+                <input type="submit" class="button button-block" value="Guardar servicio">
+                <input type="reset" class="button button-block" value="Cancelar">    
+            </form>
+            {{mensaje}}
         </div>
     </div>
-
+</div>
     {% endblock %}
