@@ -35,7 +35,11 @@ def contactanos(request):
     return render(request,"./paginas/contactanos.html")
 
 def blog(request):
-    return render(request,"./paginas/blog.html")
+    blogs= Blog.objects.all()
+    data={
+        'blogs':blogs,
+    }
+    return render(request,"./paginas/blog.html", data)
 
 def adn(request):
     return render(request,"./paginas/adn.html")
