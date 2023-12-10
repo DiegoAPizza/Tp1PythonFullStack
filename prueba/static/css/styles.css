@@ -1298,12 +1298,7 @@ html {
 /* ********************************** */
 /*            TALENTS CARDS           */
 /* ********************************** */ 
-{
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-  }
-  
+
   body {
 	background: url('img/ittalent.jpeg') no-repeat;
 	background-size: cover;
