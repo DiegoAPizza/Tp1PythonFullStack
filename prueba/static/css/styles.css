@@ -1302,15 +1302,17 @@ html {
 	background: url('img/ittalent.jpeg') no-repeat;
 	background-size: cover;
   }
-  
+  #main{
+	margin-left:12rem;
+  }
   .box {
+	display: inline-block;
 	width: 400px;
 	height: 400px;
 	background: rgba(0, 0, 0, .4);
 	padding: 20px;
 	text-align: center;
-	margin: 2%; /* Ajusta el margen según tu preferencia */
-	float: left; /* Hace que las cajas floten a la izquierda */
+	margin: 2rem; /* Ajusta el margen según tu preferencia */
 	color: white;
 	font-family: 'Century Gothic', sans-serif;
 	border-radius: 15px;
