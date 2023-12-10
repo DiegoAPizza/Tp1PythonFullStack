@@ -15,12 +15,13 @@ class Servicio(models.Model):
     idCategoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, default=0)
 
 class MetodoDePago(models.Model):
-    idPago = models.AutoField(primary_key=True)
-    tipoMetPag = models.CharField(max_length=30, default=' ')
+    idPago = models.IntegerField(primary_key=True)
+    tipoMetPag = models.CharField(max_length=100, default=' ')
+    idServicio = models.ForeignKey(Servicio, on_delete=models.CASCADE, default=1)
 
 class MetodoDeCobro(models.Model):
-    idMetod = models.AutoField(primary_key=True)
-    tipoMet = models.CharField(max_length=30, default=1) 
+    idMetod = models.IntegerField(primary_key=True)
+    tipoMet = models.CharField(max_length=100, default=1) 
     idServicio = models.ForeignKey(Servicio, on_delete=models.CASCADE, default=1)
 
 
