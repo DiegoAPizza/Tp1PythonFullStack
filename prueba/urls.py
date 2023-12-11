@@ -15,5 +15,5 @@ urlpatterns = [
     path('nt/',views.nt ,name="NuestrosTalentos"),
     path('servicios/',views.servicios ,name="servicios"),
     path('shop/',views.shop ,name="shop"),
-    
+    path('regi/',views.regi,name="regi"),
 ]

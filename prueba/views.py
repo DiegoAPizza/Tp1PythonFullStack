@@ -109,3 +109,6 @@ def servicios(request):
 def shop (request):
     return render(request,"./paginas/shop.html")
 
+def regi(request):
+
+    return render(request,"./paginas/regi.html")
