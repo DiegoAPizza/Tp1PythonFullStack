@@ -112,3 +112,7 @@ def shop (request):
 def regi(request):
 
     return render(request,"./paginas/regi.html")
+
+def regi(request):
+
+    return render(request,"./paginas/regi.html")
